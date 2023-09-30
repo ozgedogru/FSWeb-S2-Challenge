@@ -112,7 +112,7 @@ elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 var bircumle;
 
 bircumle = cumleKur("Ben ", "iyi ", "bir ", "yazılımcı ", "olacağım!");
-console.log(bircumle);
+console.log("Ornek gorev: ", bircumle);
 
 //		Sayfanın en üstünde global olarak tanımlanmış `cumleler` adında bir dizi bulunmaktadır. Bu dizinin
 // içinde en çok 5 en az 1 adet string bulunan diziler bulunmaktadır.Aşağıdaki görevlerde aksi
@@ -137,8 +137,7 @@ function cumlelereDonustur(arr, separator = ",") {
   const arrSentence = arr.map((sentence) => sentence.join(separator));
   return arrSentence;
 }
-
-console.log(cumlelereDonustur(cumleler, " "));
+console.log("Gorev 1: ", cumlelereDonustur(cumleler, " "));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
@@ -153,16 +152,27 @@ console.log(cumlelereDonustur(cumleler, " "));
 			6. Oluşturulan paragraf döndürülecek
 	*/
 
-function paragrafOlustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function paragrafOlustur(arr, callBack1, callBack2) {
+  const cumleler = callBack2(arr, " ");
+  const paragraf = callBack1(
+    cumleler[1],
+    cumleler[3],
+    cumleler[5],
+    cumleler[7],
+    cumleler[9]
+  );
+  return paragraf;
 }
+console.log(
+  "Gorev 2: ",
+  paragrafOlustur(cumleler, cumleKur, cumlelereDonustur)
+);
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
 
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , 
 Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise 
