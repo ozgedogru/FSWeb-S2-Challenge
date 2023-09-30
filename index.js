@@ -215,9 +215,22 @@ console.log("Gorev 3c: ", manav);
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function emojileriDonustur(mesaj, emojiObject) {
+  //const emojiString = Object.keys(emojiObject);
+  //const emojiSymbol = Object.values(emojiObject);
+
+  for (let key in emojiObject) {
+    const newMessage = mesaj.replaceAll(key, emojiObject[key]);
+
+    return newMessage;
+  }
 }
+console.log(
+  emojileriDonustur(
+    "Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o biraz da üzüldük :( ama yine de seviliyorsun <3",
+    emojiler
+  )
+);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
