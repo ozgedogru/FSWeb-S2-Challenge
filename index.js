@@ -214,23 +214,19 @@ console.log("Gorev 3c: ", manav);
         (.toUpperCase ve .toLowerCase metotlarıı kullanabilirsiniz.)
 			4. elde edilen string döndürülecek
  */
+const denemeCumlesi =
+  "Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o biraz da üzüldük :( ama yine de seviliyorsun <3";
 
 function emojileriDonustur(mesaj, emojiObject) {
-  //const emojiString = Object.keys(emojiObject);
-  //const emojiSymbol = Object.values(emojiObject);
+  let newMessage = mesaj;
 
   for (let key in emojiObject) {
-    const newMessage = mesaj.replaceAll(key, emojiObject[key]);
-
-    return newMessage;
+    newMessage = newMessage.replaceAll(key, emojiObject[key]);
+    newMessage = newMessage.replaceAll(key.toUpperCase(), emojiObject[key]);
   }
+  return newMessage;
 }
-console.log(
-  emojileriDonustur(
-    "Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o biraz da üzüldük :( ama yine de seviliyorsun <3",
-    emojiler
-  )
-);
+console.log(emojileriDonustur(denemeCumlesi, emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
